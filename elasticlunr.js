@@ -87,7 +87,8 @@ elasticlunr.version = "0.9.5";
 
 // only used this to make elasticlunr.js compatible with lunr-languages
 // this is a trick to define a global alias of elasticlunr
-lunr = elasticlunr;
+// workaround: added the 'window' object explicitly to avoid the Uncaught ReferenceError exception in the browser mode.
+window.lunr = elasticlunr;
 
 /*!
  * elasticlunr.utils
